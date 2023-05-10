@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'authentication/css/base.css' %}">
+  <title>Shopify Base App</title>
+</head>
+<body class="container">
+
+    <header class="header">
+        <div class="logo">
+            <img src="{% static 'authentication/images/logo.png' %}">
+        </div>
+    </header>
+
+    <main class="main">
+        <form class="install-form" method="GET" action="{% url 'install' %}" name="installForm">
+            {% csrf_token %}
+            <div class="form">
+                <input type="text" id="form-search" value="" name="shop" placeholder="Enter shopify store domain"/>
+            </div>
+
+            <button type="submit" class="install-button">Install App</button>
+        </form>
+    </main>
+
+    <footer>
+
+        <div class="footer-top">
+            <div class="useful-links">
+                <p class="useful-links-head">Useful Links</p>
+                <ul>
+                    <li><a class="useful-link" href="https://shopify.dev/docs/apps/auth/oauth" target="_blank">Shopify Docs</a> </li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="{% static 'authentication/js/base.js' %}"></script>
+</body>
+</html>
